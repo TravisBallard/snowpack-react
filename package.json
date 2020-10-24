@@ -1,0 +1,22 @@
+{
+  "name": "snowpack-react",
+  "version": "1.0.0",
+  "description": "Checking out [Snowpack](https://www.snowpack.dev/) to see if it's worthy or not.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Travis Ballard",
+  "license": "ISC",
+  "dependencies": {
+    "antd": "^4.7.2",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "styled-components": "^5.2.0"
+  },
+  "devDependencies": {
+    "@snowpack/plugin-dotenv": "^2.0.4",
+    "@snowpack/plugin-react-refresh": "^2.3.4",
+    "snowpack": "^2.15.1",
+    "snowpack-plugin-less": "^1.0.4"
+  }
+}
