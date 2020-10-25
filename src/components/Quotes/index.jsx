@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import Quote from '../Quote'
 import { Wrapper } from './styles'
 import { Button } from 'antd'
+import AppContext from '../../context/AppContext'
 
 /**
  * Get a random quote from the quotes array.
@@ -26,14 +27,16 @@ const getRandomQuotes = (numToGet, quotes) => {
  * @returns {JSX.Element}
  * @constructor
  */
-const Quotes = ({numToShow = 5, quotes}) => {
+const Quotes = ({numToShow = 5}) => {
+  const { quotes } = useContext(AppContext)
+
   const [randomQuotes, setRandomQuotes] = useState([])
   const updateRandomQuotes = () => setRandomQuotes(getRandomQuotes(numToShow, quotes))
 
-  // On mount
+  // On quotes change
   useEffect(() => {
     updateRandomQuotes()
-  }, [])
+  }, [quotes])
 
   // Render
   return (
