@@ -20,16 +20,15 @@ const getRandomQuotes = (numToGet, quotes) => {
 }
 
 /**
- * Quotes Component
+ * RandomQuotes Component
  *
  * @param numToShow
  * @param quotes
  * @returns {JSX.Element}
  * @constructor
  */
-const Quotes = ({numToShow = 5}) => {
+const RandomQuotes = ({numToShow = 5, ...props}) => {
   const { quotes } = useContext(AppContext)
-
   const [randomQuotes, setRandomQuotes] = useState([])
   const updateRandomQuotes = () => setRandomQuotes(getRandomQuotes(numToShow, quotes))
 
@@ -47,10 +46,10 @@ const Quotes = ({numToShow = 5}) => {
     <>
       <Wrapper>
         <Button type={"primary"} onClick={updateRandomQuotes}>Show random quotes</Button>
-        {randomQuotes.length > 0 && randomQuotes.map(q => <Quote {...q} />)}
+        {randomQuotes.length > 0 && randomQuotes.map(q => <Quote {...q} title={'Random Quote'} />)}
       </Wrapper>
     </>
   )
 }
 
-export default Quotes
+export default RandomQuotes

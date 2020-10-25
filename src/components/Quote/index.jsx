@@ -11,12 +11,12 @@ import { Card } from 'antd'
  * @returns {JSX.Element}
  * @constructor
  */
-const Quote = ({id, en, author, rating}) => {
+const Quote = ({id, en, author, rating, title}) => {
   /**
    * Render
    */
   return (
-    <Card title={'Random Quote'} theme={'dark'}>
+    <Card title={title} theme={'dark'}>
       <h3>{en}</h3>
       <cite>&mdash; {author}</cite>
     </Card>

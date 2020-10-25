@@ -4,6 +4,7 @@ const { SubMenu } = AntMenu
 import { UserOutlined } from '@ant-design/icons'
 import AppContext from '../../context/AppContext'
 import slugify from 'slugify'
+import { Link } from 'react-router-dom'
 
 /**
  * Navigation Menu for site
@@ -27,7 +28,16 @@ const Menu = () => {
    * @returns {*}
    */
   const listAuthors = () => {
-    return getAuthors().map(a => <AntMenu.Item key={slugify(a)}>{a}</AntMenu.Item>)
+    return getAuthors().map(a => {
+      const slug = slugify(a, { lower: true, strict: true})
+      return (
+        <AntMenu.Item key={slug}>
+          <Link to={`/author/${slug}`}>
+            {a}
+          </Link>
+        </AntMenu.Item>
+      )
+    })
   }
 
   /**
@@ -37,7 +47,7 @@ const Menu = () => {
     <>
       <AntMenu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
         <AntMenu.Item key="1" icon={<UserOutlined />} >
-          Random Quotes
+          <Link to={'/'}>Random Quotes</Link>
         </AntMenu.Item>
         <SubMenu key="authors" icon={<UserOutlined />} title="Authors">
           {listAuthors()}

@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
+import { HashRouter as Router, Switch, Route, useParams } from 'react-router-dom'
 import ContextProvider from './components/ContextProvider'
 import Menu from './components/Menu'
-import Quotes from './components/Quotes'
+import RandomQuotes from './components/RandomQuotes'
 import { Layout } from 'antd'
 
 import {
@@ -11,6 +12,7 @@ import {
 
 import 'antd/dist/antd.css'
 import './index.less'
+import AuthorQuotes from './components/AuthorQuotes'
 
 const { Header, Sider, Content } = Layout
 
@@ -19,7 +21,8 @@ const App = () => {
   const toggle = () => setSideCollapsed(!siderCollapsed)
 
   return (
-    <ContextProvider>
+    <Router>
+      <ContextProvider>
       <Layout>
       <Sider trigger={null} collapsible collapsed={siderCollapsed}>
         <div className="logo" />
@@ -40,11 +43,22 @@ const App = () => {
             minHeight: 280,
           }}
         >
-          <Quotes numToShow={5} />
+          <Switch>
+            <Route path={'/'} exact>
+              <RandomQuotes numToShow={5} />
+            </Route>
+            <Route path={'/author/:authorName'}>
+              <>
+                <AuthorQuotes />
+              </>
+            </Route>
+
+          </Switch>
         </Content>
       </Layout>
     </Layout>
     </ContextProvider>
+    </Router>
   )
 }
 
