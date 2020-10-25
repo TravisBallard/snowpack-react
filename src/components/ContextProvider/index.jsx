@@ -19,9 +19,19 @@ const getQuotes = async () => {
     })
 }
 
+/**
+ * Main Context Provider for the entire app.
+ *
+ * @param children
+ * @returns {JSX.Element}
+ * @constructor
+ */
 const ContextProvider = ({children}) => {
   const [quotes, setQuotes] = useState([])
 
+  /**
+   * On mount
+   */
   useEffect(() => {
     getQuotes().then(result => {
       setQuotes(result)
@@ -29,9 +39,12 @@ const ContextProvider = ({children}) => {
   }, [])
 
   const appContext = {
-    quotes: quotes,
+    quotes
   }
 
+  /**
+   * Render
+   */
   return (
     <AppContext.Provider value={appContext}>
       {children}

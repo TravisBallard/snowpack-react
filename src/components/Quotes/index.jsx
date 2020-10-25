@@ -33,12 +33,16 @@ const Quotes = ({numToShow = 5}) => {
   const [randomQuotes, setRandomQuotes] = useState([])
   const updateRandomQuotes = () => setRandomQuotes(getRandomQuotes(numToShow, quotes))
 
-  // On quotes change
+  /**
+   * Update random quotes when quotes change.
+   */
   useEffect(() => {
     updateRandomQuotes()
   }, [quotes])
 
-  // Render
+  /**
+   * Render
+   */
   return (
     <>
       <Wrapper>

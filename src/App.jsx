@@ -1,10 +1,7 @@
-import React, { useState, useEffect, useContext } from 'react'
-import ContextProvider from './components/ContextProvider/ContextProvider'
-import AppContext from './context/AppContext'
-import 'antd/dist/antd.css'
-import './index.less'
+import React, { useState } from 'react'
+import ContextProvider from './components/ContextProvider'
 import Menu from './components/Menu'
-
+import Quotes from './components/Quotes'
 import { Layout } from 'antd'
 
 import {
@@ -12,20 +9,14 @@ import {
   MenuFoldOutlined,
 } from '@ant-design/icons'
 
-import Quotes from './components/Quotes'
+import 'antd/dist/antd.css'
+import './index.less'
+
 const { Header, Sider, Content } = Layout
 
 const App = () => {
-
   const [siderCollapsed, setSideCollapsed] = useState(false)
   const toggle = () => setSideCollapsed(!siderCollapsed)
-
-  const { quotes } = useContext(AppContext)
-
-  useEffect(() => {
-    if (!quotes) return
-    console.log('mapped', quotes.map(q => q.author))
-  }, [quotes])
 
   return (
     <ContextProvider>
