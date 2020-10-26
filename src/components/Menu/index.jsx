@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { Menu as AntMenu } from 'antd'
 const { SubMenu } = AntMenu
-import { UserOutlined, MessageTwoTone } from '@ant-design/icons'
+import { UserOutlined, MessageOutlined } from '@ant-design/icons'
 import AppContext from '../../context/AppContext'
 import slugify from 'slugify'
 import { Link } from 'react-router-dom'
@@ -46,7 +46,7 @@ const Menu = () => {
   return (
     <>
       <AntMenu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
-        <AntMenu.Item key="1" icon={<MessageTwoTone />} >
+        <AntMenu.Item key="1" icon={<MessageOutlined />} >
           <Link to={'/'}>Random Quotes</Link>
         </AntMenu.Item>
         <SubMenu key="authors" icon={<UserOutlined />} title="Authors">

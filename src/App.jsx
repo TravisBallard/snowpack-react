@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { HashRouter as Router, Switch, Route, useParams } from 'react-router-dom'
+import { HashRouter as Router, Switch, Route } from 'react-router-dom'
 import ContextProvider from './components/ContextProvider'
 import Menu from './components/Menu'
 import RandomQuotes from './components/RandomQuotes'
@@ -8,6 +8,7 @@ import { Layout } from 'antd'
 import {
   MenuUnfoldOutlined,
   MenuFoldOutlined,
+  MessageTwoTone,
 } from '@ant-design/icons'
 
 import 'antd/dist/antd.css'
@@ -25,7 +26,9 @@ const App = () => {
       <ContextProvider>
       <Layout>
       <Sider trigger={null} collapsible collapsed={siderCollapsed}>
-        <div className="logo">QUOTES</div>
+        <div className={`logo${ siderCollapsed ? ' small' : ''}`}>
+          <MessageTwoTone />
+        </div>
         <Menu />
       </Sider>
       <Layout className="site-layout">
@@ -48,12 +51,10 @@ const App = () => {
               <RandomQuotes numToShow={5} />
             </Route>
             <Route path={'/author/:authorName'}>
-              <>
-                <AuthorQuotes />
-              </>
+              <AuthorQuotes />
             </Route>
-
           </Switch>
+
         </Content>
       </Layout>
     </Layout>
