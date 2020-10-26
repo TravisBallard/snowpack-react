@@ -25,7 +25,7 @@ const App = () => {
       <ContextProvider>
       <Layout>
       <Sider trigger={null} collapsible collapsed={siderCollapsed}>
-        <div className="logo" />
+        <div className="logo">QUOTES</div>
         <Menu />
       </Sider>
       <Layout className="site-layout">

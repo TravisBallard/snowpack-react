@@ -46,7 +46,7 @@ const RandomQuotes = ({numToShow = 5, ...props}) => {
     <>
       <Wrapper>
         <Button type={"primary"} onClick={updateRandomQuotes}>Show random quotes</Button>
-        {randomQuotes.length > 0 && randomQuotes.map(q => <Quote {...q} title={'Random Quote'} />)}
+        {randomQuotes.length > 0 && randomQuotes.map((q, i) => <Quote key={`quote-${i}`} {...q} title={'Random Quote'} />)}
       </Wrapper>
     </>
   )
