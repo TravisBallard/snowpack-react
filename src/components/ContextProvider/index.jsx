@@ -1,5 +1,5 @@
-import React, {useState, useEffect, useCallback} from 'react'
-import AppContext from '../../context/AppContext'
+import React, { useState, useEffect } from 'react'
+import AppContext from '@context/AppContext'
 
 /**
  * Get quotes from the api.

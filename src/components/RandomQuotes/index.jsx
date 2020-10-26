@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useContext } from 'react'
-import Quote from '../Quote'
+import Quote from '@components/Quote'
 import { Wrapper } from './styles'
 import { Button } from 'antd'
-import AppContext from '../../context/AppContext'
-import Loading from "../Loading";
+import AppContext from '@context/AppContext'
+import Loading from "@components/Loading";
 
 /**
  * Get a random quote from the quotes array.
@@ -46,7 +46,7 @@ const RandomQuotes = ({numToShow = 5, ...props}) => {
   return (
     <>
       {(!quotes || quotes.length === 0) && <Loading />}
-      {randomQuotes.length > 0 && (
+      {quotes.length > 0 && randomQuotes.length > 0 && (
         <Wrapper>
           <Button type={"primary"} onClick={updateRandomQuotes}>Refresh random quotes</Button>
           {randomQuotes.map((q, i) => <Quote key={`quote-${i}`} {...q} title={'Random Quote'} />)}

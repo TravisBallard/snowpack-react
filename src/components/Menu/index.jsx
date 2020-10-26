@@ -1,8 +1,7 @@
 import React, { useContext } from 'react'
 import { Menu as AntMenu } from 'antd'
-const { SubMenu } = AntMenu
 import { UserOutlined, MessageOutlined } from '@ant-design/icons'
-import AppContext from '../../context/AppContext'
+import AppContext from '@context/AppContext'
 import slugify from 'slugify'
 import { Link } from 'react-router-dom'
 
@@ -13,6 +12,7 @@ import { Link } from 'react-router-dom'
  */
 const Menu = () => {
   const { quotes } = useContext(AppContext)
+  const { SubMenu } = AntMenu
 
   /**
    * Get list of authors.

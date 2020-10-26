@@ -10,6 +10,10 @@ module.exports = {
     '@snowpack/plugin-react-refresh',
     '@snowpack/plugin-dotenv'
   ],
+  alias: {
+    '@components': './src/components',
+    '@context': './src/context',
+  },
   install: [
     /* ... */
   ],
@@ -23,9 +27,6 @@ module.exports = {
     /* ... */
   },
   proxy: {
-    /* ... */
-  },
-  alias: {
     /* ... */
   },
 }

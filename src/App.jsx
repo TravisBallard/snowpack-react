@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
 import { HashRouter as Router, Switch, Route } from 'react-router-dom'
-import ContextProvider from './components/ContextProvider'
-import Menu from './components/Menu'
-import RandomQuotes from './components/RandomQuotes'
 import { Layout } from 'antd'
+import ContextProvider from '@components/ContextProvider'
+import Menu from '@components/Menu'
+import RandomQuotes from '@components/RandomQuotes'
+import AuthorQuotes from '@components/AuthorQuotes'
 
 import {
   MenuUnfoldOutlined,
@@ -13,11 +14,14 @@ import {
 
 import 'antd/dist/antd.css'
 import './index.less'
-import AuthorQuotes from './components/AuthorQuotes'
 
-const { Header, Sider, Content } = Layout
-
+/**
+ * Quotes App
+ * @returns {JSX.Element}
+ * @constructor
+ */
 const App = () => {
+  const { Header, Sider, Content } = Layout
   const [siderCollapsed, setSideCollapsed] = useState(false)
   const toggle = () => setSideCollapsed(!siderCollapsed)
 
