@@ -31,7 +31,7 @@ const Menu = () => {
     return getAuthors().map(a => {
       const slug = slugify(a, { lower: true, strict: true})
       return (
-        <AntMenu.Item key={slug}>
+        <AntMenu.Item key={slug} className={'author-menu-item'}>
           <Link to={`/author/${slug}`} onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>
             {a}
           </Link>

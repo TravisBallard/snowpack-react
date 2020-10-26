@@ -3,7 +3,7 @@ import Quote from '@components/Quote'
 import { Wrapper } from './styles'
 import { Button } from 'antd'
 import AppContext from '@context/AppContext'
-import Loading from "@components/Loading";
+import Loading from '@components/Loading'
 
 /**
  * Get a random quote from the quotes array.
@@ -48,8 +48,14 @@ const RandomQuotes = ({numToShow = 5, ...props}) => {
       {(!quotes || quotes.length === 0) && <Loading />}
       {quotes.length > 0 && randomQuotes.length > 0 && (
         <Wrapper>
-          <Button type={"primary"} onClick={updateRandomQuotes}>Refresh random quotes</Button>
-          {randomQuotes.map((q, i) => <Quote key={`quote-${i}`} {...q} title={'Random Quote'} />)}
+          <Button
+            type={"primary"}
+            onClick={updateRandomQuotes}
+            className={'random-quote-btn'}
+          >
+            Refresh random quotes
+          </Button>
+          {randomQuotes.map((q, i) => <Quote className={`quote-${i+1}`} key={`quote-${i}`} {...q} title={'Random Quote'} />)}
         </Wrapper>
       )}
     </>

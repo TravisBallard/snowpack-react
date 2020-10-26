@@ -7,7 +7,7 @@ module.exports = {
   resolve: {
     alias: {
       '@components': path.resolve(__dirname, 'src/components/'),
-      '@atoms': path.resolve(__dirname, 'src/context/'),
+      '@context': path.resolve(__dirname, 'src/context/'),
     },
   },
 };

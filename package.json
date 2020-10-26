@@ -12,7 +12,6 @@
   "dependencies": {
     "@ant-design/icons": "^4.2.2",
     "antd": "^4.7.2",
-    "path": "^0.12.7",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-router-dom": "^5.2.0",
@@ -24,6 +23,8 @@
     "@snowpack/plugin-dotenv": "^2.0.4",
     "@snowpack/plugin-react-refresh": "^2.3.4",
     "@snowpack/plugin-webpack": "^2.0.17",
+    "cypress": "^5.4.0",
+    "path": "^0.12.7",
     "snowpack": "^2.15.1",
     "snowpack-plugin-less": "^1.0.4"
   }

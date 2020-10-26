@@ -11,7 +11,7 @@ import { Card } from 'antd'
  * @returns {JSX.Element}
  * @constructor
  */
-const Quote = ({id, en, author, rating, title, prefix}) => {
+const Quote = ({id, en, author, rating, title, prefix, className}) => {
   /**
    * Render
    */
@@ -20,7 +20,7 @@ const Quote = ({id, en, author, rating, title, prefix}) => {
       <div className={'prefix'}>
         {prefix}
       </div>
-      <div className={'quote'}>
+      <div className={`quote ${className}`}>
         <h3>{en}</h3>
         <cite>&mdash; {author}</cite>
       </div>
